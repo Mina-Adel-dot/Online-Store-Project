@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Online Store Management</h1>
+    </header>
+
+    <section class="container">
+        <div id="debug-info" style="color: red; margin-bottom: 10px;"></div>
+        <input type="text" id="searchBar" placeholder="Search for products..." onkeyup="searchProducts()">
+        <button onclick="openForm(false)">Add New Product</button>
+        <table id="productsTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Product ID</th>
+                    <th onclick="sortTable(1)">Name</th>
+                    <th onclick="sortTable(2)">Description</th>
+                    <th onclick="sortTable(3)">Size</th>
+                    <th onclick="sortTable(4)">Color</th>
+                    <th onclick="sortTable(5)">Price</th>
+                    <th onclick="sortTable(6)">Quantity</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <!-- Modal for Adding and Editing Product -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Add / Edit Product</h3>
+            <input type="text" id="productId" placeholder="Product ID">
+            <input type="text" id="productName" placeholder="Name">
+            <input type="text" id="productDesc" placeholder="Description">
+            <input type="text" id="productSize" placeholder="Size">
+            <input type="text" id="productColor" placeholder="Color">
+            <input type="number" id="productPrice" placeholder="Price">
+            <input type="number" id="productQty" placeholder="Quantity">
+            <button onclick="saveProduct()">Save Changes</button>
+            <button onclick="closeForm()">Cancel</button>
+        </div>
+    </div>
+</body>
+</html>
